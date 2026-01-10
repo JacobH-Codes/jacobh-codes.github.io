@@ -1,18 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors */
+  --primary-purple: #8b5cf6; /* Mystic purple */
+  --primary-red: #dc2626; /* Phoenix flame */
+  --primary-pink: #f472b6; /* Cosmic pink */
+
+  /* Secondary Colors */
+  --secondary-violet: #7c3aed; /* Deep mystic */
+  --secondary-orange: #ea580c; /* Burning orange */
+  --secondary-rose: #ec4899; /* Deep cosmic */
+
+  /* Accent Colors */
+  --accent-gold: #fbbf24; /* Golden fire */
+  --accent-amber: #f59e0b; /* Warm gold */
+  --accent-light-purple: #a855f7; /* Light mystic */
+
+  /* Background Colors */
+  --bg-darkest: #0f172a; /* Deep space */
+  --bg-dark: #1e1b4b; /* Midnight purple */
+  --bg-darker: #1a0b2e; /* Shadow void */
+  --bg-card: #312e81; /* Card background */
+  --bg-hover: #3730a3; /* Hover state */
+
+  /* Text Colors */
+  --text-light: #ddd6fe; /* Stardust */
+  --text-medium: #c7d2fe; /* Light purple */
+  --text-gray: #a5b4fc; /* Muted purple */
+  --text-white: #fafafa; /* Pure white */
+
+  /* Border Colors */
+  --border-purple: #6366f1; /* Purple border */
+  --border-pink: #f472b6; /* Pink border */
+  --border-red: #dc2626; /* Red border */
+
+  /* Gradients (as strings for background) */
+  --gradient-main: linear-gradient(135deg, #8b5cf6, #dc2626, #f472b6, #fbbf24);
+  --gradient-cosmic: linear-gradient(135deg, #7c3aed, #8b5cf6, #a855f7);
+  --gradient-fire: linear-gradient(135deg, #dc2626, #ea580c, #fbbf24);
+  --gradient-full: linear-gradient(
+    135deg,
+    #7c3aed,
+    #8b5cf6,
+    #f472b6,
+    #dc2626,
+    #ea580c,
+    #fbbf24
+  );
+  --gradient-bg: linear-gradient(180deg, #1e1b4b, #1a0b2e, #0f172a);
+
+  /* Shadow Colors */
+  --shadow-purple: rgba(139, 92, 246, 0.3);
+  --shadow-red: rgba(220, 38, 38, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+
+  /* Font Families */
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 5px;
-    padding: 10px;
-    background-color: #d3f0f5;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-gray);
+  background-image: var(--gradient-bg);
 }
 
-h1 {
-    font-size: 30px;
-    color: #197a8b;
+nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: var(--bg-darker);
 }
 
-p {
-    font-size: 16px;
-    color: #333333;
+main {
+  grid-area: main;
+  min-height: 80vh;
 }
 
+footer {
+  grid-area: footer;
+}
 
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: bold;
+  border: 1px solid transparent;
+  padding: 5px;
+  border-radius: 25px;
+  background-image: var(--gradient-cosmic)
+}
+
+.home {
+  place-items: center;
+  background-color: var(--bg-darkest);
+  padding: 40px 20px;
+  border-radius: 25%;
+  margin: 5px 15px 40px 15px;
+}
+
+.introduction {
+  display: grid;
+  grid-template-areas:
+    "welcome welcome"
+    "intro photo";
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.welcome {
+  grid-area: welcome;
+  font-size: 24pt;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.personal_photo {
+  grid-area: photo;
+  margin: 0 auto 15px auto;
+  width: 75%;
+  height: auto;
+  border-radius: 20%;
+}
+
+.intro-text {
+  grid-area: intro;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .personal_photo {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .personal_photo {
+    width: 200px;
+    max-width: 250px;
+  }
+}
