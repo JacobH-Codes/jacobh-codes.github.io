@@ -3,99 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Webpage</title>
+    <meta
+      name="description"
+      content="Jacob Hoover's personal portfolio showcasing web development projects, skills, and professional background as a software developer and Air National Guard mechanic."
+    />
+    <title>Jacob Hoover - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <a href="#home" class="nav-link">Home</a>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#home" class="nav-link" aria-current="page">Home</a>
       <a href="#about" class="nav-link">About Me</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
-    <main>
-      <section class="home" id="home">
+    <main role="main">
+      <section class="home" id="home" aria-labelledby="home-heading">
         <div class="introduction">
-          <img src="Images/me_small.jpg"
-          srcset="Images/me_small.jpg 500w,
-                  Images/me_medium.jpg 700w,
-                  Images/me_large.jpg 900w" 
-                  alt="Me and my friends" class="personal_photo">
-          <h1 class="welcome">Welcome to My Webpage</h1>
+          <h1 class="welcome" id="home-heading">Welcome to My Webpage</h1>
           <p class="intro-text">
-            Hello! I'm Jacob Hoover, a learning developer and love learning more
-            about technology. Explore my projects, skills, and get to know more
-            about me!
+            Hello! I'm Jacob Hoover, a learning developer who loves learning
+            more about technology. Explore my projects, skills, and get to know
+            more about me!
           </p>
+          <img
+            src="Images/me_small.jpg"
+            srcset="
+              Images/me_small.jpg  500w,
+              Images/me_medium.jpg 700w,
+              Images/me_large.jpg  900w
+            "
+            sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+            alt="Jacob Hoover with friends at an outdoor gathering, wearing aviation headset"
+            class="personal_photo"
+            loading="lazy"
+          />
         </div>
       </section>
 
-      <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
-        <h3 class="about-heading">My Background</h3>
-        <p class="about-text">
-          I am 24 years old, and I grew up in the small town of Steeleville, IL.
-          I graduated in 2019, and afterword I moved to Phoenix for about a year
-          to experience new things before moving back to Illinois.
-        </p>
-        <h3 class="about-heading">My Job</h3>
-        <p class="about-text">
-          I am currently serving in the Air National Guard and I'm going into my
-          final year of my contract. I have been working full-time at my local
-          base as a jet engine mechanic for almost 3 years now.
-        </p>
-        <h3 class="about-heading">Current Life</h3>
-        <p class="about-text">
-          I married my wife in 2024 and we recently bought our first home within
-          the past year. We have 2 dogs, Kai and Winnie, who keep us on our toes
-          constantly.
-        </p>
-        <h3 class="about-heading">My Interests</h3>
-        <p class="about-text">
-          In my free time I enjoy working out, reading, playing games, and
-          spending time with my friends and family.
-        </p>
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <h2 class="section-title" id="about-heading">About Me</h2>
+        <article aria-labelledby="background-heading">
+          <h3 class="about-heading" id="background-heading">My Background</h3>
+          <p class="about-text">
+            I am 24 years old, and I grew up in the small town of Steeleville,
+            IL. I graduated in 2019, and afterword I moved to Phoenix for about
+            a year to experience new things before moving back to Illinois.
+          </p>
+        </article>
+        <article aria-labelledby="job-heading">
+          <h3 class="about-heading" id="job-heading">My Job</h3>
+          <p class="about-text">
+            I am currently serving in the Air National Guard and I'm going into
+            my final year of my contract. I have been working full-time at my
+            local base as a jet engine mechanic for almost 3 years now.
+          </p>
+        </article>
+        <article aria-labelledby="life-heading">
+          <h3 class="about-heading" id="life-heading">Current Life</h3>
+          <p class="about-text">
+            I married my wife in 2024 and we recently bought our first home
+            within the past year. We have 2 dogs, Kai and Winnie, who keep us on
+            our toes constantly.
+          </p>
+        </article>
+        <article aria-labelledby="interests-heading">
+          <h3 class="about-heading" id="interests-heading">My Interests</h3>
+          <p class="about-text">
+            In my free time I enjoy working out, reading, playing games, and
+            spending time with my friends and family.
+          </p>
+        </article>
       </section>
 
-      <section class="projects" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-list">
-          <div class="project-item">
+      <section
+        class="projects"
+        id="projects"
+        aria-labelledby="projects-heading"
+      >
+        <h2 class="section-title" id="projects-heading">Projects</h2>
+        <div class="project-list" role="list">
+          <article class="project-item" role="listitem">
             <h3 class="project-title">Java Collections</h3>
-            <p class="project-description">A Java data structure library built from scratch.</p>
-          </div>
-          <div class="project-item">
+            <p class="project-description">
+              A comprehensive Java data structure library built from scratch,
+              implementing DoublyLinkedList, Stack, Queue, and BinarySearchTree
+              with full testing suites and professional documentation.
+            </p>
+          </article>
+          <article class="project-item" role="listitem">
             <h3 class="project-title">JavaFx Library System</h3>
-            <p class="project-description">A JavaFx application for managing a library system.</p>
-          </div>
+            <p class="project-description">
+              A JavaFx application for managing a library system with an
+              intuitive interface for tracking books and members, also allowing
+              the permanent addition and removal of books from the library.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section class="skills" id="skills">
-        <h2 class="section-title">Skills</h2>
-        <h3 class="skill-title">Technical Skills</h3>
-        <ul class="skill-list">
-          <li class="skill-item">Java</li>
-          <li class="skill-item">JavaFx</li>
-          <li class="skill-item">Mechanics</li>
-          <li class="skill-item">Aerospace</li>
-          <li class="skill-item">Training</li>
-        </ul>
-        <h3 class="skill-title">Soft Skills</h3>
-        <ul class="skill-list">
-          <li class="skill-item">Communication</li>
-          <li class="skill-item">Problem Solving</li>
-          <li class="skill-item">Teamwork</li>
-          <li class="skill-item">Adaptability</li>
-        </ul>
+      <section class="skills" id="skills" aria-labelledby="skills-heading">
+        <h2 class="section-title" id="skills-heading">Skills</h2>
+        <div aria-labelledby="tech-skills-heading">
+          <h3 class="skill-title" id="tech-skills-heading">Technical Skills</h3>
+          <ul class="skill-list" role="list" aria-label="Technical skills list">
+            <li class="skill-item" role="listitem">Java</li>
+            <li class="skill-item" role="listitem">JavaFx</li>
+            <li class="skill-item" role="listitem">Data Structures</li>
+            <li class="skill-item" role="listitem">Git & GitHub</li>
+            <li class="skill-item" role="listitem">HTML</li>
+            <li class="skill-item" role="listitem">CSS</li>
+            <li class="skill-item" role="listitem">JavaScript</li>
+          </ul>
+        </div>
+        <div aria-labelledby="prof-skills-heading">
+          <h3 class="skill-title" id="prof-skills-heading">
+            Professional Skills
+          </h3>
+          <ul
+            class="skill-list"
+            role="list"
+            aria-label="Professional skills list"
+          >
+            <li class="skill-item" role="listitem">Aircraft Mechanic</li>
+            <li class="skill-item" role="listitem">Technical Training</li>
+            <li class="skill-item" role="listitem">Jet Engine Operation</li>
+          </ul>
+        </div>
+        <div aria-labelledby="soft-skills-heading">
+          <h3 class="skill-title" id="soft-skills-heading">Soft Skills</h3>
+          <ul class="skill-list" role="list" aria-label="Soft skills list">
+            <li class="skill-item" role="listitem">Communication</li>
+            <li class="skill-item" role="listitem">Problem Solving</li>
+            <li class="skill-item" role="listitem">Teamwork</li>
+            <li class="skill-item" role="listitem">Adaptability</li>
+            <li class="skill-item" role="listitem">Leading</li>
+            <li class="skill-item" role="listitem">Time Management</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="contact" id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-info">You can reach me at</p>
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <h2 class="section-title" id="contact-heading">Contact</h2>
+        <p class="contact-text">
+          Interested in working together? Feel free to reach out!
+        </p>
+        <address>
+          <p class="contact-info">
+            <span class="sr-only">Email address:</span>
+            <a
+              href="mailto:jhoov@uis.edu"
+              aria-label="Send email to Jacob Hoover"
+              >Email: jhoov@uis.edu</a
+            >
+          </p>
+          <p class="contact-info">
+            <span class="sr-only">Instagram:</span>
+            <a
+              href="https://instagram.com/jt_hoova"
+              target="_blank"
+              aria-label="Visit Jacob Hoover's Instagram profile (opens in new tab)"
+              >Instagram: jt_hoova</a
+            >
+          </p>
+        </address>
       </section>
     </main>
-    <footer>&copy; 2025 Jacob Hoover</footer>
+    <footer role="contentinfo">
+      <p>&copy; 2025 Jacob Hoover.</p>
+    </footer>
   </body>
 </html>
